@@ -73,6 +73,16 @@ class Game{
                         botao[0].style.display = "inline-block";
                     }
                 }
+                
+                function deuVelha(){
+                    if(jogadas == 9){
+                        let mostrarvencedor = document.getElementsByClassName("hiden");
+                        mostrarvencedor[0].innerHTML = "Deu Velha!!!";
+                        mostrarvencedor[0].style.display = "block";
+                        let botao = document.getElementsByClassName("btn");
+                        botao[0].style.display = "inline-block";
+                    }
+                }
 
                 vencedor_01(validarJogada()[0], validarJogada()[1], validarJogada()[2]);
                 vencedor_01(validarJogada()[0], validarJogada()[4], validarJogada()[8]);
@@ -91,7 +101,7 @@ class Game{
                 vencedor_02(validarJogada()[2], validarJogada()[5], validarJogada()[8]);
                 vencedor_02(validarJogada()[3], validarJogada()[4], validarJogada()[5]);
                 vencedor_02(validarJogada()[6], validarJogada()[7], validarJogada()[8]);
-
+                deuVelha();
             });
 
         }
